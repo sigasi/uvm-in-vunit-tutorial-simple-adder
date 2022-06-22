@@ -21,8 +21,8 @@ class simpleadder_driver extends uvm_driver#(simpleadder_transaction);
 	virtual task drive();
 		simpleadder_transaction sa_tx;
 		integer counter = 0, state = 0;
-		vif.sig_ina = 0'b0;
-		vif.sig_inb = 0'b0;
+		vif.sig_ina = 0;
+		vif.sig_inb = 0;
 		vif.sig_en_i = 1'b0;
 
 		forever begin

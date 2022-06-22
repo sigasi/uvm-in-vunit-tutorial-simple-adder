@@ -26,7 +26,7 @@ class simpleadder_scoreboard extends uvm_scoreboard;
 		sb_export_before	= new("sb_export_before", this);
 		sb_export_after		= new("sb_export_after", this);
 
-   		before_fifo		= new("before_fifo", this);
+		before_fifo		= new("before_fifo", this);
 		after_fifo		= new("after_fifo", this);
 	endfunction: build_phase
 
@@ -35,20 +35,20 @@ class simpleadder_scoreboard extends uvm_scoreboard;
 		sb_export_after.connect(after_fifo.analysis_export);
 	endfunction: connect_phase
 
-	task run();
+	task run_phase(uvm_phase phase);
 		forever begin
 			before_fifo.get(transaction_before);
 			after_fifo.get(transaction_after);
 			
 			compare();
 		end
-	endtask: run
+	endtask: run_phase
 
 	virtual function void compare();
 		if(transaction_before.out == transaction_after.out) begin
 			`uvm_info("compare", {"Test: OK!"}, UVM_LOW);
 		end else begin
-			`uvm_info("compare", {"Test: Fail!"}, UVM_LOW);
+			`uvm_error("compare", {"Test: Fail!"});
 		end
 	endfunction: compare
 endclass: simpleadder_scoreboard

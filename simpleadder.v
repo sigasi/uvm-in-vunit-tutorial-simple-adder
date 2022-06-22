@@ -5,7 +5,7 @@ module simpleadder(input wire clk,
 		   input wire inb,
 
 		   output reg en_o,
-		   output reg out);
+		   output reg outp);
 
 
 	integer counter, state;
@@ -18,7 +18,7 @@ module simpleadder(input wire clk,
 		temp_a = 2'b00;
 		temp_b = 2'b00;
 		temp_out = 3'b000;
-		out = 0;
+		outp = 0;
 
 		en_o <= 0;
 		state = 0;
@@ -53,7 +53,7 @@ module simpleadder(input wire clk,
 
 			//State 2: Enable en_o and sends result to the output
 			2: begin
-				out <= temp_out[2];
+				outp <= temp_out[2];
 				temp_out = temp_out << 1;
 
 				counter = counter + 1;
@@ -64,7 +64,7 @@ module simpleadder(input wire clk,
 
 				if(counter==6) begin
 					counter = 0;
-					out <= 1'b0;
+					outp <= 1'b0;
 					state = 0;
 				end
 			end
