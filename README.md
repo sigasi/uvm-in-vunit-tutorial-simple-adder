@@ -37,5 +37,5 @@ project](https://github.com/naragece/uvm-testbench-tutorial-simple-adder).
 ![Add UVM library to Common Libraries](img/uvmunit_linked2_plus.png?raw=true)
 * In the editor, on line 4 of `simpleadder_top_tb.sv`, use the quick fix again to add the UVM includes.
 
-![Quick fix for UVM includes](img/uvmunit_qf1.png?raw=true)
+![Quick fix for UVM includes](img/uvmunit_qf2.png?raw=true)
 * And that's it, your project is now fully configured.
