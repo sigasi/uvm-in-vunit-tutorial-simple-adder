@@ -27,11 +27,15 @@ project](https://github.com/naragece/uvm-testbench-tutorial-simple-adder).
 * Browse for the `run.py` script and click **Finish**
 * Open `simpleadder_top_tb.sv`. You'll notice missing include files on lines 3 and 4.
 * In the Common Libraries folder of your project, add a linked folder named `vunit_include` to `VUNIT/verilog/include`
+
 ![Add VUnit include folder to Common Libraries](img/uvmunit_linked1_plus.png?raw=true)
 * In the editor, on line 3 of `simpleadder_top_tb.sv`, click the error-with-lightbulb icon and use quick fix **Add `Common Libraries/vunit_include` to include paths**
+
 ![Quick fix for VUnit includes](img/uvmunit_qf1.png?raw=true)
 * Add another linked folder to Common Libraries, linking to your copy of the UVM library. Most likely, your simulator comes with a copy, so you don't need to download it yourself. E.g., Riviera PRO has a copy in the `vlib` subfolder of the installation folder.
+
 ![Add UVM library to Common Libraries](img/uvmunit_linked2_plus.png?raw=true)
 * In the editor, on line 4 of `simpleadder_top_tb.sv`, use the quick fix again to add the UVM includes.
+
 ![Quick fix for UVM includes](img/uvmunit_qf1.png?raw=true)
 * And that's it, your project is now fully configured.
